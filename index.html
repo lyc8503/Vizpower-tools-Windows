@@ -1,1 +1,289 @@
-/home/l/Desktop/site/index.max.html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta itemprop="image" content="https://clansty-rin-1251600285.cos.ap-shanghai.myqcloud.com/pic/wxb.jpg" />
+    <meta name="image" content="https://clansty-rin-1251600285.cos.ap-shanghai.myqcloud.com/pic/wxb.jpg" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="https://clansty-rin-1251600285.cos.ap-shanghai.myqcloud.com/pic/iMeeting.ico" rel="icon"
+        type="image/x-icon" />
+    <title>无限宝辅助工具</title>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://lib.baomitu.com/element-ui/2.12.0/theme-chalk/index.css">
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            height: 100%;
+        }
+
+        div.bg {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            position: absolute;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -233;
+        }
+
+        div#app {
+            height: 100%;
+            width: 100%;
+
+        }
+
+        .el-row {
+            height: 100%;
+            width: 100%;
+        }
+
+        .el-container#content {
+            border-radius: 4px;
+            height: 80vh;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+            z-index: 2;
+            overflow: auto;
+        }
+
+        .el-container.blurback {
+            height: 80vh;
+            width: inherit;
+            content: '';
+            position: absolute;
+            filter: blur(5px);
+            z-index: 0;
+            overflow: hidden;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .el-container.wback {
+            height: 80vh;
+            width: inherit;
+            content: '';
+            position: absolute;
+            z-index: 0;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .el-drawer__body {
+            padding: 20px;
+        }
+
+        .ark {
+            background-image: url(https://clansty-rin-1251600285.cos.ap-shanghai.myqcloud.com/pic/bg.jpg);
+        }
+
+        .wxb {
+            background-image: url(https://clansty-rin-1251600285.cos.ap-shanghai.myqcloud.com/pic/wxb.jpg);
+        }
+
+        .nobg {
+            background-color: rgba(0, 0, 0, .0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-show="false">无限宝辅助工具</h1>
+        <transition name="el-fade-in-linear">
+            <div class="bg wxb" v-show="bgclass.wxb"></div>
+        </transition>
+        <transition name="el-fade-in-linear">
+            <div class="bg ark" v-show="bgclass.ark"></div>
+        </transition>
+        <el-row type="flex" justify="center" align="middle">
+            <el-col :xs="22" :span="16">
+                <transition name="el-fade-in-linear">
+                    <el-container id="back" class="blurback wxb" v-show="bgclass.wxb">
+                    </el-container>
+                </transition>
+                <transition name="el-fade-in-linear">
+                    <el-container id="back" class="blurback ark" v-show="bgclass.ark">
+                    </el-container>
+                </transition>
+                <el-container id="back" class="wback">
+                </el-container>
+                <el-container id="content">
+                    <el-row id="b" type="flex" justify="center">
+                        <el-col :span="20">
+                            <el-tabs v-model="tab" @tab-click="tabCh">
+                                <el-tab-pane label="无限宝专用虚拟机" name="wxb">
+                                    <h3>无限宝专用虚拟机</h3>
+                                    <p>将无限宝装在虚拟机里，可以有效解决锁屏 窥屏等问题，有效保护隐私</p>
+                                    <el-dropdown type="primary" @command="vmDown">
+                                        <el-button type="primary">
+                                            下载<i class="el-icon-arrow-down el-icon--right"></i>
+                                        </el-button>
+                                        <el-dropdown-menu slot="dropdown">
+                                            <el-dropdown-item command="a">虚拟机主程序</el-dropdown-item>
+                                            <el-dropdown-item command="b">Win7 镜像，适用于中等配置电脑</el-dropdown-item>
+                                            <el-dropdown-item command="c">XP 镜像，适用于低配置电脑</el-dropdown-item>
+                                            <el-dropdown-item command="d">b站专栏</el-dropdown-item>
+                                            <el-dropdown-item command="e">加入无限宝研究组，群文件下载更快</el-dropdown-item>
+                                        </el-dropdown-menu>
+                                    </el-dropdown>
+                                </el-tab-pane>
+                                <el-tab-pane label="自动签到" name="ark">
+                                    <h3>自动签到</h3>
+                                    <p>能在无限宝弹出签到时提醒你并尝试自动签到</p>
+                                    <p>如果你正在使用虚拟机，请在虚拟机内运行</p>
+                                    <el-button-group>
+                                        <el-button type="primary" icon="el-icon-monitor" @click="rcwin">Windows
+                                        </el-button>
+                                        <el-button type="primary" icon="el-icon-mobile-phone" @click="rcand">Android
+                                        </el-button>
+                                    </el-button-group>
+
+                                </el-tab-pane>
+                                <el-tab-pane label="启动插件" name="wxb2">
+                                    <h3>无限宝启动插件</h3>
+                                    <el-image
+                                        src="https://clansty-rin-1251600285.cos.ap-shanghai.myqcloud.com/pic/wxbhook.jpg">
+                                        <div slot="placeholder" class="image-slot">
+                                            加载中<span class="dot">...</span>
+                                        </div>
+                                    </el-image>
+                                    <p>
+                                        能在无限宝启动之前截获启动参数并进行修改，提供显示在线人数，解除录屏限制，以及<el-popover placement="top-start"
+                                            title="一定限度" width="200" trigger="hover"
+                                            content="修改 ClassAutoLock 参数，只可以方式定时自动锁定，暂时无法防止手动锁定">
+                                            <span slot="reference">一定限度</span>
+
+                                        </el-popover>的防锁定。同时提供改名功能。
+                                    </p>
+                                    <p>附加额外功能：可以把你的无限宝图标换成<el-link type="primary" @click="bup">b站@清流半夭</el-link>的
+                                        <el-link type="primary" @click="iconvid">拟人形象</el-link>
+                                    </p>
+                                    <el-button-group>
+                                        <el-button type="primary" icon="el-icon-monitor" @click="launcher">Windows
+                                        </el-button>
+                                        <el-button type="primary" icon="el-icon-video-play" @click="launcherBili">安装视频
+                                        </el-button>
+                                    </el-button-group>
+                                </el-tab-pane>
+                            </el-tabs>
+                        </el-col>
+                    </el-row>
+                </el-container>
+            </el-col>
+        </el-row>
+        <el-drawer title="我是标题" :visible.sync="qgOpen" :with-header="false">
+            <p>虚拟机镜像较大，请加群在群文件中下载哦</p>
+            <el-image src="https://clansty-rin-1251600285.cos.ap-shanghai.myqcloud.com/pic/qrcode.png">
+                <div slot="placeholder" class="image-slot">
+                    加载中<span class="dot">...</span>
+                </div>
+            </el-image>
+            <p>无限宝研究组 1055109700</p>
+        </el-drawer>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://npm.elemecdn.com/vue@2.6.11/dist/vue.min.js"></script>
+<!-- import JavaScript -->
+<script src="https://lib.baomitu.com/element-ui/2.12.0/index.js"></script>
+<script>
+    var bgark = {
+        ark: true,
+        wxb: false
+    };
+    var bgwxb = {
+        ark: false,
+        wxb: true
+    };
+    var bgnone = {
+        ark: false,
+        wxb: false
+    };
+    var vdata = {
+        bgclass: bgwxb,
+        tab: 'wxb',
+        qgOpen: false
+    };
+    new Vue({
+        el: '#app',
+        data: vdata,
+        methods: {
+            tabCh(tab, event) {
+                console.log(tab, event);
+                if (tab.name == "wxb")
+                    vdata.bgclass = bgwxb;
+                else if (tab.name == "ark")
+                    vdata.bgclass = bgark;
+                else if (tab.name == "wxb2")
+                    vdata.bgclass = bgwxb;
+            },
+            vmDown(a) {
+                switch (a) {
+                    case "a":
+                        window.location.href = 'https://mirrors.tuna.tsinghua.edu.cn/virtualbox/virtualbox-Win-latest.exe';
+                        break;
+                    case "b":
+                        window.location.href = 'https://ddf.lwqwq.com:25565/f/4e7174cf1e2149f7a262/?dl=1';
+                        this.$notify({
+                            title: '提示',
+                            message: 'Win7 虚拟机 VBox 增强工具版本过久，请手动更新一下',
+                        });
+                        break;
+                    case "c":
+                        window.location.href = 'https://ddf.lwqwq.com:25565/f/a2fe1c58b5234fd79f75/?dl=1';
+                        break;
+                    case "d":
+                        window.open('https://www.bilibili.com/read/cv4795840');
+                        break;
+                    case "e":
+                        vdata.qgOpen = true;
+                        break;
+                }
+            },
+            rcand() {
+                window.location.href = 'https://clansty-rin-1251600285.cos.ap-shanghai.myqcloud.com/dl/wxbrollcall-mobile.apk';
+                this.$notify({
+                    title: '提示',
+                    message: 'Android 版本由第三方提供',
+                });
+
+            },
+            rcwin() {
+                window.location.href = 'https://clansty-rin-1251600285.cos.ap-shanghai.myqcloud.com/dl/wxbrollcall-latest.exe';
+                this.$notify({
+                    title: '提示',
+                    message: 'Windows 版本使用图像识别的方法，稳定性可能稍差',
+                });
+            },
+            iconvid() {
+                window.open('https://www.bilibili.com/video/av90671873');
+            },
+            bup() {
+                window.open('https://space.bilibili.com/290875214');
+            },
+            launcherBili() {
+                window.open('https://www.bilibili.com/video/av92097144/');
+            },
+            launcher() {
+                window.location.href = "https://clansty-rin-1251600285.cos.ap-shanghai.myqcloud.com/dl/wxbhook-latest.7z";
+                this.$notify({
+                    title: '提示',
+                    message: '安装说明在文件里哦',
+                });
+            }
+        }
+
+    })
+</script>
+
+</html>
