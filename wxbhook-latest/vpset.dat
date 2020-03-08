@@ -1,0 +1,102 @@
+[config]
+
+;==0不输出编解码统计日志 ==1输出日志
+video_codec_log = 0
+H265BitRateScales = 0.8,0.7,0.6,0.5,0.5
+
+CloseAdTime = 5
+LastAdTime = 10
+Use_Plc = 0
+Codec = OPUS
+MaxSpeakerMan = 6
+MaxAVLatencyInClient = 1000
+VideoKeyFrameIntervalTime = 5
+WrfPlayPrepareTimeout = 30
+
+VoicePrompt = 1
+
+DSMaxTraffic = 1024
+DocViewTraffic = 200
+ChatFilterControl = 0
+mic_only_filter=麦克风,MIC,mic,Mic
+audio_play_delay0=200,300,800
+audio_play_delay1=400,500,2000
+audio_play_delay2=1000,1500,4000
+audio_play_delay3=1000,1100,6000
+card_video_list=176_144,320_240,352_288,640_480,720_576,1024_768,1280_720
+
+RecvEmail = wxb@winupon.com
+SenderEmail = wxb_sender2@winupon.com
+SenderSmtp = smtp.winupon.com
+
+WebDAVRootFormatString = /uploads/%u/
+WebDAVAccount = vizpower
+WebDAVPwd = 123@vizpower
+NDMaxSizeperFile = 20971520
+NDMaxSizePerMeeting = 209715200
+
+HelpUrlAddress = http://www.kehou.com/wuxianbao/zhichi.html
+DumpType = 2
+KLiteURL = http://kehou.wpstatic.cn/wxb/K-Lite_Codec_Pack_902_Mega.exe
+H5SDKURL = http://kehou.wpstatic.cn/wxb/HTML5Point_SDK_4.3.69.exe
+CefURL = http://kehou.wpstatic.cn/wxb/cef.zip
+
+DisableFunctionByPC = 0
+SortUserListInterval = 10
+BigTestDetailReferenceVal = 80000
+
+HideTSButtonInAbout =
+CSPhoneTextInAbout = 
+PoweredByTextInAbout = 
+IDS_ABOUT_TIME_VER = 
+
+[config_text]
+AFX_IDS_APP_TITLE		=无限宝互动平台
+
+IDS_VPRC_ABOUT_TIME_VER		=无限宝互动平台 V15.0
+IDS_VPRC_HOST			=助教
+IDS_VPRC_PRESENTER		=主讲
+IDS_VPRC_MEMBER			=学生
+IDS_VPRC_LISTENER		=旁听
+IDS_VPRC_ANSWERTEACHER =答疑
+IDS_VPRC_TEACHERS		=老师
+IDS_VPRC_VOTE_NAME		=调查
+IDS_VPRC_TimeStauts_Resting	=课间休息
+IDS_VPRC_NETDISK_NAME		=资料共享
+IDS_VPRC_TimeStatus_Meeting	=上课时间
+IDS_VPRC_TimeStatus_FAQ		=答疑时间
+IDS_VPRC_MEETING_NAME		=课堂
+IDS_VPRC_MEETING_TOPIC		=课程：
+IDS_VPRC_MEETING_CHAIRMAN	=主讲：
+IDS_VPRC_MEETING_PROCESS	=时间：
+IDS_VPRC_TOPNAME		=当前课堂
+IDS_VPRC_REC_NAME		=录制
+IDS_VPRC_MEETING_DEFAULT_NAME	=无限宝互动平台XXX课程
+IDS_VPRC_VOTEHASDELETED		=调查已结束
+IDS_VPRC_ROOMNAME		=课堂
+
+[config_text_EN]
+AFX_IDS_APP_TITLE		=Vizpower
+
+IDS_VPRC_ABOUT_TIME_VER		=Vizpower V15.0
+IDS_VPRC_REC_NAME		=Record
+IDS_VPRC_HOST			=assistant
+IDS_VPRC_PRESENTER		=teacher
+IDS_VPRC_MEMBER			=student
+IDS_VPRC_VOTE_NAME		=Vote
+IDS_VPRC_LISTENER		=listener
+IDS_VPRC_ANSWERTEACHER =answer
+IDS_VPRC_TEACHERS		=teachers
+IDS_VPRC_MEETING_NAME		=class
+IDS_VPRC_MEETING_TOPIC		=Topic:
+IDS_VPRC_MEETING_CHAIRMAN	=Teacher:
+IDS_VPRC_MEETING_PROCESS	=Process:
+IDS_VPRC_MEETING_DEFAULT_NAME	=Regular class
+IDS_VPRC_TimeStauts_Resting	=Recess
+IDS_VPRC_NETDISK_NAME		=Netdisk
+IDS_VPRC_TimeStatus_Meeting	=Class time
+IDS_VPRC_TimeStatus_FAQ		=Answer
+IDS_VPRC_TOPNAME		=Current class
+IDS_VPRC_VOTEHASDELETED		=The vote have been stopped.
+IDS_VPRC_ROOMNAME		=classroom
+

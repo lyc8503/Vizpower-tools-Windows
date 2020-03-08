@@ -1,2 +1,2 @@
-# Vizpower-tools-Windows
-Windows 端无限宝工具
+# Vizpower-tools-Setup-script
+帮助懒人/新手一键安装启动插件x
